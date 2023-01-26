@@ -164,4 +164,58 @@ pod/nginx created
 NAME    READY   STATUS    RESTARTS   AGE
 nginx   1/1     Running   0          2m46s
 
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl describe pod nginx
+Name:         nginx
+Namespace:    default
+Priority:     0
+Node:         ip-10-0-101-143.ec2.internal/10.0.101.143
+Start Time:   Thu, 26 Jan 2023 17:18:54 +0000
+Labels:       <none>
+Annotations:  cni.projectcalico.org/containerID: a6934698cb391a20eea036095b305e6ae82a96835de23e0a7b1255615b453e6d
+              cni.projectcalico.org/podIP: 192.168.198.9/32
+              cni.projectcalico.org/podIPs: 192.168.198.9/32
+Status:       Running
+IP:           192.168.198.9
+IPs:
+  IP:  192.168.198.9
+Containers:
+  nginx:
+    Container ID:   containerd://62b7287d1d18e6303bfe78f764db4e0b4f8c7b634a1ce6182fd4162a72702806
+    Image:          nginx:1.14.2
+    Image ID:       docker.io/library/nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Thu, 26 Jan 2023 17:18:58 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-vz6v9 (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  kube-api-access-vz6v9:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  11m   default-scheduler  Successfully assigned default/nginx to ip-10-0-101-143.ec2.internal
+  Normal  Pulling    11m   kubelet            Pulling image "nginx:1.14.2"
+  Normal  Pulled     11m   kubelet            Successfully pulled image "nginx:1.14.2" in 2.461626951s (2.461631706s including waiting)
+  Normal  Created    11m   kubelet            Created container nginx
+  Normal  Started    11m   kubelet            Started container nginx
 
