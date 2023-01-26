@@ -14,3 +14,35 @@ ip-10-0-101-143.ec2.internal   Ready    control-plane   36m   v1.26.1
 [ centos@ip-172-31-5-129 ~/.kube ]$ kubectl get nodes -o wide
 NAME                           STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP     OS-IMAGE                KERNEL-VERSION                CONTAINER-RUNTIME
 ip-10-0-101-143.ec2.internal   Ready    control-plane   42m   v1.26.1   10.0.101.143   3.208.151.213   CentOS Linux 7 (Core)   3.10.0-1160.76.1.el7.x86_64   containerd://1.6.15
+
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ cat Pod1.sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mutli-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+    - name: mongodb
+      image: mongod
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
+pod/nginx unchanged
+pod/mutli-pod created
+
+#Here in manifest file Pods.sh, nginx is already created, so when we applied second time it created only mongodb pod only
+
