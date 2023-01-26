@@ -251,3 +251,29 @@ pod2-->nginx,mongodb (o/p : created nginx)
 
 pod1 --->nginx,nginx ---_(o/p : unchnaged --comment)
 
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ cat 01-mutli-pod.sh
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mutli-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+    - name: mongodb
+      image: alpine
+
+#changed image --->alpine
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f 01-mutli-pod.sh
+pod/mutli-pod configured
+
+#o/p: configured
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
+pod/nginx unchanged
+
