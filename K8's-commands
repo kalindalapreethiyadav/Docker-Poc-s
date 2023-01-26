@@ -1,0 +1,46 @@
+[ centos@address ~/.kube ]$ kubectl cluster-info
+Kubernetes control plane is running at https://3.208.151.213:6443
+Heapster is running at https://3.208.151.213:6443/api/v1/namespaces/kube-system/services/heapster/proxy
+CoreDNS is running at https://3.208.151.213:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+
+address | address | t3.medium | null
+[ centos@address ~/.kube ]$ kubectl get nodes
+NAME                           STATUS   ROLES           AGE   VERSION
+ip-10-0-101-143.ec2.internal   Ready    control-plane   36m   v1.26.1
+
+address | address | t3.medium | null
+[ centos@address ~/.kube ]$ kubectl get nodes -o wide
+NAME                           STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP     OS-IMAGE                KERNEL-VERSION                CONTAINER-RUNTIME
+ip-10-0-101-143.ec2.internal   Ready    control-plane   42m   v1.26.1   10.0.101.143   3.208.151.213   CentOS Linux 7 (Core)   3.10.0-1160.76.1.el7.x86_64   containerd://1.6.15
+
+[ centos@ip-172-31-5-129 ~/.kube ]$ kubectl api-versions
+admissionregistration.k8s.io/v1
+apiextensions.k8s.io/v1
+apiregistration.k8s.io/v1
+apps/v1
+authentication.k8s.io/v1
+authorization.k8s.io/v1
+autoscaling/v1
+autoscaling/v2
+batch/v1
+certificates.k8s.io/v1
+coordination.k8s.io/v1
+crd.projectcalico.org/v1
+discovery.k8s.io/v1
+events.k8s.io/v1
+flowcontrol.apiserver.k8s.io/v1beta2
+flowcontrol.apiserver.k8s.io/v1beta3
+networking.k8s.io/v1
+node.k8s.io/v1
+operator.tigera.io/v1
+policy/v1
+projectcalico.org/v3
+rbac.authorization.k8s.io/v1
+scheduling.k8s.io/v1
+storage.k8s.io/v1
+storage.k8s.io/v1beta1
+v1
+
+
