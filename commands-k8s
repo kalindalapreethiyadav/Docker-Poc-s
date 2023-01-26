@@ -46,3 +46,5 @@ pod/mutli-pod created
 
 #Here in manifest file Pods.sh, nginx is already created, so when we applied second time it created only mongodb pod only
 
+
+
