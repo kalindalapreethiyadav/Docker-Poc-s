@@ -245,3 +245,9 @@ address | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK
 pod/nginx unchanged
 pod/mutli-pod unchanged
 
+#correct
+Pod1 --->nginx 
+pod2-->nginx,mongodb (o/p : created nginx)
+
+pod1 --->nginx,nginx ---_(o/p : unchnaged --comment)
+
