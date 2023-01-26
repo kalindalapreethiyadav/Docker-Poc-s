@@ -6,5 +6,3 @@ spec:
   conatiners:
     - name: nginx
       image: nginx:1.14.2
-      ports:
-       - conatinerPort: 80
