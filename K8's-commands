@@ -43,7 +43,7 @@ storage.k8s.io/v1
 storage.k8s.io/v1beta1
 v1
 
-44.201.8.233 | 172.31.5.129 | t3.medium | null
+address | address | t3.medium | null
 [ centos@ip-172-31-5-129 ~/.kube ]$ kubectl api-resources
 NAME                              SHORTNAMES                                      APIVERSION                             NAMESPACED   KIND
 bindings                                                                          v1                                     true         Binding
@@ -155,16 +155,16 @@ spec:
     - name: nginx
       image: nginx:1.14.2
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+address | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
 pod/nginx created
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+address | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl get pods
 NAME    READY   STATUS    RESTARTS   AGE
 nginx   1/1     Running   0          2m46s
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+address | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl describe pod nginx
 Name:         nginx
 Namespace:    default
@@ -219,7 +219,7 @@ Events:
   Normal  Created    11m   kubelet            Created container nginx
   Normal  Started    11m   kubelet            Started container nginx
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+address | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ cat 01-mutli-pod.sh
 apiVersion: v1
 kind: Pod
@@ -230,17 +230,17 @@ spec:
     - name: nginx
       image: nginx:1.14.2
 
-.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+.201.8.233 | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f 01-mutli-pod.sh
 The Pod "mutli-pod" is invalid: spec.containers: Forbidden: pod updates may not add or remove containers
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+address | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl get pods
 NAME        READY   STATUS             RESTARTS   AGE
 mutli-pod   1/2     ImagePullBackOff   0          8m21s
 nginx       1/1     Running            0          41m
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+address | address | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
 pod/nginx unchanged
 pod/mutli-pod unchanged
