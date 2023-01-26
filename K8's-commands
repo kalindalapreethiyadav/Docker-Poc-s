@@ -219,3 +219,29 @@ Events:
   Normal  Created    11m   kubelet            Created container nginx
   Normal  Started    11m   kubelet            Started container nginx
 
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ cat 01-mutli-pod.sh
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mutli-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+
+.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f 01-mutli-pod.sh
+The Pod "mutli-pod" is invalid: spec.containers: Forbidden: pod updates may not add or remove containers
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl get pods
+NAME        READY   STATUS             RESTARTS   AGE
+mutli-pod   1/2     ImagePullBackOff   0          8m21s
+nginx       1/1     Running            0          41m
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
+pod/nginx unchanged
+pod/mutli-pod unchanged
+
