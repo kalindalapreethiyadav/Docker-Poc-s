@@ -142,4 +142,26 @@ volumeattachments                                                               
 [ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl get pods
 No resources found in default namespace.
 
+example :-
+
+Pods1.sh-
+-------------
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
+pod/nginx created
+
+44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl get pods
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          2m46s
+
 
