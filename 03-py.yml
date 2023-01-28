@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: python
+spec:
+  containers:
+  - name: python
+    image: python
+    command: ["sleep","300"]
+    env:
+      - name: projet_name
+        value: projeck_python
+      - name: url
+        value: www.google.com
