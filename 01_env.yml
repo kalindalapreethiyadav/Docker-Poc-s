@@ -3,13 +3,13 @@ kind: Pod
 metadata: 
   name: nginx
 spec:
-   containers:
-      - name: nginx
-        image: ngnix:1.14.2
-        env: 
-          - name: projet_name
-            value: projeck
-          - name: url
-            value: www.google.com
-          - name: ENV
-            value: test
+  containers:
+  - name: nginx
+    image: ngnix:1.14.2
+    env: 
+      - name: projet_name
+        value: projeck
+      - name: url
+        value: www.google.com
+      - name: ENV
+        value: test
