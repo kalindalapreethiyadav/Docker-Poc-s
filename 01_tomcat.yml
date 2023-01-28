@@ -10,3 +10,15 @@ spec:
     envFrom:
       - configMapRef:
            name: config_tom
+
+---
+
+apiVersion: v1
+kind: configMap
+metadata:
+  name: config_tom
+data:
+  project: projet_name
+  pro_name: projeck_python
+  name_url: url
+  url_value: www.google.com
