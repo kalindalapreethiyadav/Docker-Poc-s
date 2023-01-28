@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: alpine
+  name: nginx
 spec:
   containers:
-  - name: alpnie
-    image: alpine
+  - name: nginx
+    image: nginx
     command: ["sleep","300"]
     envFrom:
       - configMapRef:
