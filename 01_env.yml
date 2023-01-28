@@ -13,3 +13,19 @@ spec:
         value: www.google.com
       - name: ENV
         value: test
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.14.2
+      env:
+       - name: projet_name
+        value: projeck
+      - name: url
+        value: www.google.com
