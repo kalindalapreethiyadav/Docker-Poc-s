@@ -8,6 +8,6 @@ spec:
       image: nginx:1.14.2
       env:
        - name: projet_name
-        value: projeck
-      - name: url
-        value: www.google.com
+         value: projeck
+       - name: url
+         value: www.google.com
