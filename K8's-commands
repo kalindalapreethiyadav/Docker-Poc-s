@@ -275,3 +275,4 @@ pod/mutli-pod configured
 [ centos@ ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
 pod/nginx unchanged
 
+ENV:-
