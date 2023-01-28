@@ -59,8 +59,12 @@ It's a RedHat Flavored K8's. Majorly used for Kubernetes Solution on Data Center
 Probes
 Liveliness Prode:
 The kubelet uses liveness probes to know when to restart a container. For example, liveness probes could catch a deadlock, where an application is running, but unable to make progress. Restarting a container in such a state can help to make the application more available despite bugs.
+
+
 Readiness Probe:
 The kubelet uses readiness probes to know when a container is ready to start accepting traffic. A Pod is considered ready when all of its containers are ready. One use of this signal is to control which Pods are used as backends for Services. When a Pod is not ready, it is removed from Service load balancers.
+
+
 Resource Allocation :
 It's always recommended to give a maximum of 80% of the nodes capability to a pod.
 
@@ -143,3 +147,6 @@ deployment can be done in 2 ways :
 
     1) Rolling update 
     2) Recreate 
+
+
+    
