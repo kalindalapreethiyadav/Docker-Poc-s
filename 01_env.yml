@@ -5,7 +5,7 @@ metadata:
 spec:
    containers:
       - name: nginx
-        Image: ngnix.1.14.2
+        image: ngnix.1.14.2
         env: 
           - name: projet_name
             value: projeck
