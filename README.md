@@ -89,6 +89,7 @@ How to create a priority class ?
     globalDefault: false
     description: "This priority class should be used for XYZ Customers pods only."
 
+
 REPLICA SET :
 A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
 What is a package manager is centos ? YUM
