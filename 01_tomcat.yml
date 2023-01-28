@@ -9,4 +9,4 @@ spec:
     command: ["sleep","300"]
     envFrom:
       - configMapRef:
-           name: 01-config.yml
+           name: 01-config
