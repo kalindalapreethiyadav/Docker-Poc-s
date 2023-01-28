@@ -46,5 +46,40 @@ pod/mutli-pod created
 
 #Here in manifest file Pods.sh, nginx is already created, so when we applied second time it created only mongodb pod only
 
+#Environment varibales of conatiner, How to map ?
+#storing mutiples of varibales in one file and then adding as reference to container
+
+18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ ls
+01-config.yml  01_env.yml  01-mutli-pod.sh  01_tomcat.yml  03-py.yml  commands-k8s  K8's-commands  Pod1.sh  README.md
+# creating config file
+18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ cat 01-config.yml
+apiVersion: v1 
+kind: configMap
+metadata:
+  name: congig mapping file
+data:
+  project: projet_name
+  pro_name: projeck_python
+  name_url: url
+  url_value: www.google.com
+18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ cat 01_tomcat.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat
+spec:
+  containers:
+  - name: tomcat
+    image: tomcat:latest
+    command: ["sleep","300"]
+    envFrom: #attaching env config file to container
+      - configMapRef:
+           name: 01-config.yml
+18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl apply -f 01_tomcat.yml
+pod/tomcat created
 
 
