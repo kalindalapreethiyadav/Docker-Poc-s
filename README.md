@@ -143,10 +143,10 @@ $ helm list
 $ helm upgrade chartName ./chartLocation
 
 Deployment Strategy in Kubernetes :
+----------------------------------------
 deployment can be done in 2 ways :
 
     1) Rolling update 
     2) Recreate 
 
 
-    
