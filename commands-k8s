@@ -83,3 +83,12 @@ spec:
 pod/tomcat created
 
 
+18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+NAME        READY   STATUS                       RESTARTS       AGE
+centos      0/1     CrashLoopBackOff             18 (92s ago)   46m
+mutli-pod   1/2     Terminating                  17 (80m ago)   45h
+nginx       1/1     Terminating                  1 (80m ago)    45h
+python      0/1     CrashLoopBackOff             14 (30s ago)   47m
+tomcat      0/1     CreateContainerConfigError   0              3m
+
