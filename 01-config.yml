@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: configMap
 metadata:
-  name: config
+  name: config_tom
 data:
   project: projet_name
   pro_name: projeck_python
