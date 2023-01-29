@@ -8,13 +8,10 @@ metadata:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: mongodb
   namespace: dev
 spec:
   containers:
-  - name: nginx
-    image: nginx
+  - name: mongodb
+    image: mongod
     command: ["sleep","300"]
-    envFrom:
-      - configMapRef:
-           name: config_tom
