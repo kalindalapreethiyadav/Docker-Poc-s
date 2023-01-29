@@ -276,3 +276,72 @@ pod/mutli-pod configured
 pod/nginx unchanged
 
 ENV:-
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    command: ["sleep","300"]
+    envFrom:
+      - configMapRef:
+           name: config_tom
+
+---
+
+apiVersion: v1
+kind: configMap
+metadata:
+  name: config_tom
+data:
+  project: projet_name
+  pro_name: projeck_python
+  name_url: url
+  url_value: www.google.com
+
+Namespace:-
+---------------------------------------------------
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongodb
+  namespace: dev
+spec:
+  containers:
+  - name: mongodb
+    image: mongod
+    command: ["sleep","300"]
+
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 703 bytes | 703.00 KiB/s, done.
+From https://github.com/kalindalapreethiyadav/DockerK8sPOC
+   7d4595e..21662f6  main       -> origin/main
+Updating 7d4595e..21662f6
+Fast-forward
+ 01-namespace.yml | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl apply -f 01-namespace.yml
+namespace/dev unchanged
+pod/mongodb created
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$
+
+Sets:-
+---------
