@@ -19,3 +19,51 @@ spec:
         image: httpd:latest
         ports:
         - containerPort: 80
+
+example 2:-
+
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ cat 01-deploy-http.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-deployment
+  labels:
+    app: httpd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: httpd
+  template:
+    metadata:
+      labels:
+        app: httpd
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:latest
+        ports:
+        - containerPort: 80
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl apply -f 01-deploy-http.yml
+deployment.apps/httpd-deployment created
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get deploy
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+httpd-deployment   3/3     3            3           10s
+nginx-deployment   3/3     3            3           7m46s
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+NAME                                READY   STATUS                       RESTARTS   AGE
+httpd-deployment-d6598d6c5-8sb9v    1/1     Running                      0          20s
+httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      0          20s
+httpd-deployment-d6598d6c5-j6wjm    1/1     Running                      0          20s
+mongodb                             0/1     ImagePullBackOff             0          24h
+nginx-deployment-85996f8dbd-svrjv   1/1     Running                      0          7m56s
+nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0          7m56s
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          7m56s
+tomcat                              0/1     CreateContainerConfigError   0          25h
+
