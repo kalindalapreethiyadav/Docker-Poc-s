@@ -133,4 +133,7 @@ nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0      
 nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          18s
 tomcat                              0/1     CreateContainerConfigError   0          25h
 
+[ centos@i ~/DockerK8sPOC ]$ kubectl get deploy
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           5m28s
 
