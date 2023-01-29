@@ -1,0 +1,52 @@
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$ sudo curl --silent --location "https://github.com                                                                             /weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | t                                                                             ar xz -C /tmp
+
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$
+
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$ curl --silent --location "https://github.com/weav                                                                             eworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz                                                                              -C /tmp
+
+
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$
+
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$ sudo mv /tmp/eksctl /usr/local/bin
+
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$ eksctl version
+0.127.0
+
+
+
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$ kubectl get namespace
+-bash: kubectl: command not found
+
+35.153.226.240 | 172.31.51.132 | t2.micro | null
+[ centos@ip-172-31-51-132 ~ ]$ eksctl create cluster --name my-cluster --region                                                                              us-east-1
+2023-01-29 08:22:35 [ℹ]  eksctl version 0.127.0
+2023-01-29 08:22:35 [ℹ]  using region us-east-1
+2023-01-29 08:22:35 [ℹ]  setting availability zones to [us-east-1e us-east-1f]
+2023-01-29 08:22:35 [ℹ]  subnets for us-east-1e - public:192.168.0.0/19 private:192.168.64.0/19
+2023-01-29 08:22:35 [ℹ]  subnets for us-east-1f - public:192.168.32.0/19 private:192.168.96.0/19
+2023-01-29 08:22:35 [ℹ]  nodegroup "ng-a50bf013" will use "" [AmazonLinux2/1.24]
+2023-01-29 08:22:35 [ℹ]  using Kubernetes version 1.24
+2023-01-29 08:22:35 [ℹ]  creating EKS cluster "my-cluster" in "us-east-1" region with managed nodes
+2023-01-29 08:22:35 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
+2023-01-29 08:22:35 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-east-1 --cluster=my-cluster'
+2023-01-29 08:22:35 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "my-cluster" in "us-east-1"
+2023-01-29 08:22:35 [ℹ]  CloudWatch logging will not be enabled for cluster "my-cluster" in "us-east-1"
+2023-01-29 08:22:35 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-east-1 --cluster=my-cluster'
+2023-01-29 08:22:35 [ℹ]
+2 sequential tasks: { create cluster control plane "my-cluster",
+    2 sequential sub-tasks: {
+        wait for control plane to become ready,
+        create managed nodegroup "ng-a50bf013",
+    }
+}
+2023-01-29 08:22:35 [ℹ]  building cluster stack "eksctl-my-cluster-cluster"
+2023-01-29 08:22:35 [ℹ]  deploying stack "eksctl-my-cluster-cluster"
+2023-01-29 08:23:05 [ℹ]  waiting for CloudFormation stack "eksctl-my-cluster-cluster"
+
