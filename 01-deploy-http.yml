@@ -96,4 +96,42 @@ nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0      
 nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          13m
 tomcat                              0/1     CreateContainerConfigError   0          25h
 
-'
+'^C
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl scale deploy nginx-deployment --replicas=2
+deployment.apps/nginx-deployment scaled
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+NAME                                READY   STATUS                       RESTARTS   AGE
+httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      0          9m30s
+httpd-deployment-d6598d6c5-j6wjm    1/1     Running                      0          9m30s
+mongodb                             0/1     ImagePullBackOff             0          24h
+nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0          17m
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          17m
+tomcat                              0/1     CreateContainerConfigError   0          25h
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get ns
+NAME               STATUS   AGE
+calico             Active   3d1h
+calico-apiserver   Active   3d1h
+calico-system      Active   3d1h
+default            Active   3d1h
+dev                Active   57m
+kube-node-lease    Active   3d1h
+kube-public        Active   3d1h
+kube-system        Active   3d1h
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get deploy
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+httpd-deployment   2/2     2            2           10m
+nginx-deployment   2/2     2            2           17m
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get replicaset
+NAME                          DESIRED   CURRENT   READY   AGE
+httpd-deployment-d6598d6c5    2         2         2       10m
+nginx-deployment-85996f8dbd   2         2         2       17m
+
