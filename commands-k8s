@@ -1,23 +1,23 @@
-[ centos@ip-172-31-5-129 ~/.kube ]$ kubectl cluster-info
+[ centos@aadress ~/.kube ]$ kubectl cluster-info
 Kubernetes control plane is running at https://3.208.151.213:6443
 Heapster is running at https://3.208.151.213:6443/api/v1/namespaces/kube-system/services/heapster/proxy
 CoreDNS is running at https://3.208.151.213:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 
-44.201.8.233 | 172.31.5.129 | t3.medium | null
-[ centos@ip-172-31-5-129 ~/.kube ]$ kubectl get nodes
+44.201.8.233 | aadress | t3.medium | null
+[ centos@aadress ~/.kube ]$ kubectl get nodes
 NAME                           STATUS   ROLES           AGE   VERSION
 ip-10-0-101-143.ec2.internal   Ready    control-plane   36m   v1.26.1
 
-44.201.8.233 | 172.31.5.129 | t3.medium | null
-[ centos@ip-172-31-5-129 ~/.kube ]$ kubectl get nodes -o wide
+44.201.8.233 | aadress | t3.medium | null
+[ centos@aadress ~/.kube ]$ kubectl get nodes -o wide
 NAME                           STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP     OS-IMAGE                KERNEL-VERSION                CONTAINER-RUNTIME
 ip-10-0-101-143.ec2.internal   Ready    control-plane   42m   v1.26.1   10.0.101.143   3.208.151.213   CentOS Linux 7 (Core)   3.10.0-1160.76.1.el7.x86_64   containerd://1.6.15
 
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ cat Pod1.sh
+44.201.8.233 | aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/.kube/DockerK8sPOC ]$ cat Pod1.sh
 apiVersion: v1
 kind: Pod
 metadata:
@@ -39,8 +39,8 @@ spec:
     - name: mongodb
       image: mongod
 
-44.201.8.233 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
+44.201.8.233 | aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/.kube/DockerK8sPOC ]$ kubectl apply -f Pod1.sh
 pod/nginx unchanged
 pod/mutli-pod created
 
@@ -49,12 +49,12 @@ pod/mutli-pod created
 #Environment varibales of conatiner, How to map ?
 #storing mutiples of varibales in one file and then adding as reference to container
 
-18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ ls
+18.209.229.150 | aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/DockerK8sPOC ]$ ls
 01-config.yml  01_env.yml  01-mutli-pod.sh  01_tomcat.yml  03-py.yml  commands-k8s  K8's-commands  Pod1.sh  README.md
 # creating config file
-18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ cat 01-config.yml
+18.209.229.150 | aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/DockerK8sPOC ]$ cat 01-config.yml
 apiVersion: v1 
 kind: configMap
 metadata:
@@ -64,8 +64,8 @@ data:
   pro_name: projeck_python
   name_url: url
   url_value: www.google.com
-18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ cat 01_tomcat.yml
+18.209.229.150 | aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/DockerK8sPOC ]$ cat 01_tomcat.yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -78,17 +78,59 @@ spec:
     envFrom: #attaching env config file to container
       - configMapRef:
            name: 01-config.yml
-18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl apply -f 01_tomcat.yml
+18.209.229.150 | aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/DockerK8sPOC ]$ kubectl apply -f 01_tomcat.yml
 pod/tomcat created
 
 
-18.209.229.150 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+18.209.229.150 | aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/DockerK8sPOC ]$ kubectl get pods
 NAME        READY   STATUS                       RESTARTS       AGE
 centos      0/1     CrashLoopBackOff             18 (92s ago)   46m
 mutli-pod   1/2     Terminating                  17 (80m ago)   45h
 nginx       1/1     Terminating                  1 (80m ago)    45h
 python      0/1     CrashLoopBackOff             14 (30s ago)   47m
 tomcat      0/1     CreateContainerConfigError   0              3m
+
+
+Deployments:--
+
+aadress| aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/DockerK8sPOC ]$ cat 01-deploy-ex.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx    #label of replicaset  
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx      #label of pod
+  template:
+    metadata:
+      labels:
+        app: nginx    
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+
+
+[ centos@aadress ~/DockerK8sPOC ]$ kubectl apply -f 01-deploy-ex.yml
+deployment.apps/nginx-deployment created
+
+
+aadress| aadress | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@aadress ~/DockerK8sPOC ]$ kubectl get pods
+NAME                                READY   STATUS                       RESTARTS   AGE
+mongodb                             0/1     ImagePullBackOff             0          24h
+nginx-deployment-85996f8dbd-svrjv   1/1     Running                      0          18s
+nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0          18s
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          18s
+tomcat                              0/1     CreateContainerConfigError   0          25h
+
 
