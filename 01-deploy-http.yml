@@ -67,3 +67,33 @@ nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0      
 nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          7m56s
 tomcat                              0/1     CreateContainerConfigError   0          25h
 
+#scale the replicas in the deployment:-
+-------------------------'
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods --watch
+NAME                                READY   STATUS                       RESTARTS   AGE
+httpd-deployment-d6598d6c5-8sb9v    1/1     Running                      0          5m6s
+httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      0          5m6s
+httpd-deployment-d6598d6c5-j6wjm    1/1     Running                      0          5m6s
+mongodb                             0/1     ImagePullBackOff             0          24h
+nginx-deployment-85996f8dbd-svrjv   1/1     Running                      0          12m
+nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0          12m
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          12m
+tomcat                              0/1     CreateContainerConfigError   0          25h
+^C
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl scale deploy httpd-deployment --replicas=2
+deployment.apps/httpd-deployment scaled
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods --watch
+NAME                                READY   STATUS                       RESTARTS   AGE
+httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      0          5m53s
+httpd-deployment-d6598d6c5-j6wjm    1/1     Running                      0          5m53s
+mongodb                             0/1     ImagePullBackOff             0          24h
+nginx-deployment-85996f8dbd-svrjv   1/1     Running                      0          13m
+nginx-deployment-85996f8dbd-w7br8   1/1     Running                      0          13m
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      0          13m
+tomcat                              0/1     CreateContainerConfigError   0          25h
+
+'
