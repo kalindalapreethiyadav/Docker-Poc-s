@@ -135,3 +135,34 @@ NAME                          DESIRED   CURRENT   READY   AGE
 httpd-deployment-d6598d6c5    2         2         2       10m
 nginx-deployment-85996f8dbd   2         2         2       17m
 
+#hideen pods
+
+35.175.122.133 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods -A
+NAMESPACE          NAME                                                   READY   STATUS                       RESTARTS      AGE
+calico-apiserver   calico-apiserver-76669b6c4-bq699                       1/1     Running                      2 (61m ago)   3d1h
+calico-apiserver   calico-apiserver-76669b6c4-d59v7                       1/1     Running                      2 (61m ago)   3d1h
+calico-system      calico-kube-controllers-8bd4657cc-qg9xj                1/1     Running                      2 (61m ago)   3d1h
+calico-system      calico-node-7vbzc                                      1/1     Running                      2 (61m ago)   3d1h
+calico-system      calico-typha-77ddfbf658-sjgj9                          1/1     Running                      3 (61m ago)   3d1h
+calico-system      csi-node-driver-p5dj4                                  2/2     Running                      4 (61m ago)   3d1h
+calico             tigera-operator-594d547464-5w82g                       1/1     Running                      3 (61m ago)   3d1h
+default            httpd-deployment-d6598d6c5-hz8b6                       1/1     Running                      0             12m
+default            httpd-deployment-d6598d6c5-j6wjm                       1/1     Running                      0             12m
+default            mongodb                                                0/1     ImagePullBackOff             0             25h
+default            nginx-deployment-85996f8dbd-w7br8                      1/1     Running                      0             20m
+default            nginx-deployment-85996f8dbd-zshmq                      1/1     Running                      0             20m
+default            tomcat                                                 0/1     CreateContainerConfigError   0             25h
+dev                mongodb                                                0/1     ImagePullBackOff             0             58m
+kube-system        coredns-787d4945fb-gh7k8                               1/1     Running                      2 (61m ago)   3d1h
+kube-system        coredns-787d4945fb-p2bf2                               1/1     Running                      2 (61m ago)   3d1h
+kube-system        dashboard-metrics-scraper-6c57f89c7c-gc79b             1/1     Running                      1 (61m ago)   3d1h
+kube-system        etcd-ip-10-0-101-143.ec2.internal                      1/1     Running                      2 (61m ago)   3d1h
+kube-system        external-dns-59d8d44b78-vkxzg                          1/1     Running                      1 (61m ago)   3d1h
+kube-system        heapster-d56f79c9b-fzdsl                               1/1     Running                      2 (61m ago)   3d1h
+kube-system        kube-apiserver-ip-10-0-101-143.ec2.internal            1/1     Running                      2 (61m ago)   3d1h
+kube-system        kube-controller-manager-ip-10-0-101-143.ec2.internal   1/1     Running                      2 (61m ago)   3d1h
+kube-system        kube-proxy-pdm4t                                       1/1     Running                      2 (61m ago)   3d1h
+kube-system        kube-scheduler-ip-10-0-101-143.ec2.internal            1/1     Running                      2 (61m ago)   3d1h
+kube-system        kubernetes-dashboard-d799f6d9c-lqx76                   1/1     Running                      2 (61m ago)   3d1h
+
