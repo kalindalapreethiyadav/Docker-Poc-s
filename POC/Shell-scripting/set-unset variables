@@ -4,7 +4,7 @@
 2 user variables
 3 system variables
 
-1 local variables
+1 local variables:-
 
 preek@JPD-Yadav:~$ project=robotshop
 preek@JPD-Yadav:~$ echo $project
@@ -14,6 +14,94 @@ preek@JPD-Yadav:~$ echo $project
 
 preek@JPD-Yadav:~$
 
+2 user variable:-
+ 
+~$ vi .bash_profile
+JPD-Yadav:~$ cat .bash_profile
+export abc=preek  #parmanent variable created
+export vari=joshna
+JPD-Yadav:~$ echo $abc
+preek
+JPD-Yadav:~$ echo $vari
+joshna
+JPD-Yadav:~$
+
+0r
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ sudo su - joshna
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ joshna@ip-172-31-94-238 ~ ]$ ls -a
+.  ..  .bash_logout  .bash_profile  .bashrc
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ joshna@ip-172-31-94-238 ~ ]$ vi .bash_profile
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ joshna@ip-172-31-94-238 ~ ]$ cat .bash_profile
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+
+
+export PATH
+export ps=1
+export project=robotshop
+
+[ joshna@ ~ ]$ echo $ps
+
+[ joshna@ip-172-31-94-238 ~ ]$ source .bash_profile
+
+[ joshna@ip-172-31-94-238 ~ ]$ echo $ps
+1
+
+
+3. system variables:-
+
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ ls
+Bash-Scripting  create_server.sh  get-docker.sh  kubernetes  POC  remoting.jar  Roboshop-Project  Terraform-Learning  vprofile-project
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ sudo vi /etc/profile
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ cat /etc/profile |tail -n 4
+unset i
+unset -f pathmunge
+
+export loin=preethi
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ echo $loin
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ source /etc/profile
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ echo $loin
+preethi
+
+#Another users also can use
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ sudo su - joshna
+Last login: Tue Jan 31 14:57:50 UTC 2023 on pts/0
+
+[ joshna@ip-172-31-94-238 ~ ]$ echo $loin
+preethi
+
+
+  or .bashrc -----values adding
 
 
 
