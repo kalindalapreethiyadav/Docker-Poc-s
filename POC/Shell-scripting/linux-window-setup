@@ -1,9 +1,33 @@
 Steps to install linux in Windows:-
 -----------------------------------
 
+1)Prerequisites
+You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11 to use the commands below. If you are on earlier versions please see the manual install page.
+
 WSl (Windows Subsystem of Linux)
 
-1)Open CMD/powershell & run cmd as admin
+2)Install WSL command
 
-wsl --install
+You can now install everything you need to run WSL with a single command. Open PowerShell or Windows Command Prompt in administrator mode by right-clicking and selecting "Run as administrator", enter the wsl --install command, then restart your machine.
+
+$wsl --install
+
+This command will enable the features necessary to run WSL and install the Ubuntu distribution of Linux
+
+Reference link
+https://learn.microsoft.com/en-us/windows/wsl/install
+
+Microsoft Windows [Version 10.0.22000.1455]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>wsl --install
+Installing: Virtual Machine Platform
+Virtual Machine Platform has been installed.
+Installing: Windows Subsystem for Linux
+Windows Subsystem for Linux has been installed.
+Installing: Ubuntu
+Ubuntu has been installed.
+The requested operation is successful. Changes will not be effective until the system is rebooted.
+
+C:\Windows\system32>
 
