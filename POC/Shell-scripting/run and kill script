@@ -1,0 +1,44 @@
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ bash sample.sh > ./file.log
+sample.sh: line 9: syntax error near unexpected token `"9999"'
+sample.sh: line 9: `printf("9999")'
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ vi sample.sh
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ bash sample.sh > ./file.log &
+[1] 1445
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ jobs
+[1]+  Running                 bash sample.sh > ./file.log &
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ cat sample.sh
+ping google.com
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ jobs
+[1]+  Running                 bash sample.sh > ./file.log &
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ kill -9 1445
+[1]+  Killed                  bash sample.sh > ./file.log
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ jobs
+
+Process checking :-
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ ps -ef | grep "bash"
+centos    1382  1381  0 16:27 pts/0    00:00:00 -bash
+centos    1468  1382  0 16:33 pts/0    00:00:00 bash sample.sh
+centos    1567  1382  0 16:33 pts/0    00:00:00 grep --color=auto bash
+
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ centos@ip-172-31-94-238 ~ ]$ ps  | grep "bash"
+ 1382 pts/0    00:00:00 bash
+ 1468 pts/0    00:00:00 bash
+
