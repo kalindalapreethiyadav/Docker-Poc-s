@@ -105,56 +105,15 @@ preethi
 
 
 
+==============================================================================================
 
+[ joshna@ip-172-31-94-238 ~ ]$ set ps=1
 
+[ joshna@ip-172-31-94-238 ~ ]$ echo $ps
+1
+[ joshna@ip-172-31-94-238 ~ ]$ unset ps
 
+44.204.161.8 | 172.31.94.238 | t2.micro | null
+[ joshna@ip-172-31-94-238 ~ ]$ echo $ps
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-To set (or change) a environment variable, use command 
-"set varname=value". There shall be no spaces before and after the '=' sign.
-"set varname=", i.e., set it to an empty string.
-
-set varname
-set varname=value
-set varname=
-set
-
-Display the value of the variable
-Set or change the value of the variable (Note: no space before and after '=')
-*******Delete the variable by setting to empty string (Note: nothing after '=')**************
-
-Display ALL the environment variables
-For examples,
-
-// Set an environment variable called MY_VAR
-set MY_VAR=hello
-   
-// Display
-set MY_VAR
-MY_VAR=hello
-   
-// Unset an environment variable
-set MY_VAR=
-   
-// Display
-set MY_VAR
-Environment variable MY_VAR not defined
-
-
-An environment variable set via the "set" command under CMD is a local, available to the current CMD session only. Try setting a variable, re-start CMD and look for the variable.
 
