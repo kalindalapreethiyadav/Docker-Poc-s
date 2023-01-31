@@ -17,8 +17,6 @@ This command will enable the features necessary to run WSL and install the Ubunt
 Reference link
 https://learn.microsoft.com/en-us/windows/wsl/install
 
-Microsoft Windows [Version 10.0.22000.1455]
-(c) Microsoft Corporation. All rights reserved.
 
 C:\Windows\system32>wsl --install
 Installing: Virtual Machine Platform
@@ -30,4 +28,81 @@ Ubuntu has been installed.
 The requested operation is successful. Changes will not be effective until the system is rebooted.
 
 C:\Windows\system32>
+
+To find the list of distrubutions running
+
+C:\Windows\system32>wsl --list --verbose
+  NAME      STATE           VERSION
+* Ubuntu    Running         2
+
+To list:-
+
+$wsl --list --online
+
+preek@JPD-Yadav:~$ sudo apt-get update
+Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease
+Get:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [114 kB]
+Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [99.8 kB]
+Get:5 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [594 kB]
+Get:7 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [125 kB]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [7824 B]
+Get:9 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [528 kB]
+Get:10 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [81.2 kB]
+Get:11 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 c-n-f Metadata [556 B]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [634 kB]
+Get:13 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [86.4 kB]
+Get:14 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [11.3 kB]
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [4268 B]
+Get:16 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [972 B]
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [228 B]
+Get:18 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+Get:19 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+Get:20 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+Get:21 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+Get:22 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+Get:23 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [852 kB]
+88% [23 Packages 262 kB/852 kB 31%]                                                                   4639 B/s 8min 44s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
