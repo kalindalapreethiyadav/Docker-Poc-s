@@ -1,0 +1,9 @@
+Steps to install linux in Windows:-
+-----------------------------------
+
+WSl (Windows Subsystem of Linux)
+
+1)Open CMD/powershell & run cmd as admin
+
+wsl --install
+
