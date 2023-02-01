@@ -14,17 +14,17 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: payment
+  name: payment-service
   labels:
     tiers: payment-mysql
 spec:
   selector:      
     tier: payment-mysql  #matchs with pod label
   ports:
-  - name: portpayment
+  - name: port-payment
     protocol: TCP
     port: 80
-    targetport: 80
+    targetPort: 80
     
   
 
