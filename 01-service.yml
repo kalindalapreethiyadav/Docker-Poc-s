@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: payment
   labels:
-   tier: payment-mysql
+   tier: payment-mysql  #matched with service tier name
 spec:
   containers:
   - name: mysql
@@ -17,7 +17,7 @@ metadata:
   name: payment-service
 spec:
   selector:      
-    tier: payment-mysql  #matchs with pod label
+    tier: payment-mysql  #matchs with pod tier label
   ports:
   - name: my-poo
     protocol: TCP
