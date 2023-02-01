@@ -22,7 +22,7 @@ Spec:
     tier: payment-mysql  #matchs with pod label
   ports:
   - name: port-payment
-    protocal: TCP
+    protocol: TCP
     port: 80
     targetPort: 80
     
