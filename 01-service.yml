@@ -21,7 +21,7 @@ spec:
   selector:      
     tier: payment-mysql  #matchs with pod label
   ports:
-  - name: paymentmysqlport
+  - name: my-poo
     protocol: TCP
     port: 80
     targetPort: 80
