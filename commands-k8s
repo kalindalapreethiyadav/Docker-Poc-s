@@ -138,12 +138,12 @@ NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   3/3     3            3           5m28s
 
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl scale deployment httpd-deployment --replicas=1
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl scale deployment httpd-deployment --replicas=1
 deployment.apps/httpd-deployment scaled
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl get pods
 NAME                                READY   STATUS                       RESTARTS      AGE
 httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (9h ago)    2d23h
 mongodb                             0/1     ImagePullBackOff             0             4d
@@ -155,8 +155,8 @@ tomcat                              0/1     CreateContainerConfigError   0      
 LoadBalancer:-
 ----------------                        0/1     CreateContainerConfigError   0                4d1h
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ cat 01-lb.yml
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ cat 01-lb.yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -183,11 +183,11 @@ spec:
     protocol: TCP
     port: 80
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl scale  deployment nginx-deployment --replicas=1
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl scale  deployment nginx-deployment --replicas=1
 deployment.apps/nginx-deployment scaled
 
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl get pods
 NAME                                READY   STATUS                       RESTARTS        AGE
 httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (9h ago)      2d23h
 mongodb                             0/1     ImagePullBackOff             0               4d
@@ -196,8 +196,8 @@ nginx-deployment-85996f8dbd-zshmq   1/1     Running                      1 (9h a
 payment                             0/1     CrashLoopBackOff             9 (2m42s ago)   24m
 tomcat                              0/1     CreateContainerConfigError   0               4d1h
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl get pods
 NAME                                READY   STATUS                       RESTARTS        AGE
 httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (9h ago)      2d23h
 mongodb                             0/1     ImagePullBackOff             0               4d
@@ -206,31 +206,31 @@ nginx-deployment-85996f8dbd-zshmq   1/1     Running                      1 (9h a
 payment                             0/1     CrashLoopBackOff             9 (2m55s ago)   24m
 tomcat        
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl apply -f 01-lb.yml
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl apply -f 01-lb.yml
 pod/catalogue created
 service/catalogue-service created
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl get pods
 NAME                                READY   STATUS                       RESTARTS         AGE
 catalogue                           0/1     ImagePullBackOff             0                10s
 httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (9h ago)       2d23h
 mongodb                             0/1     ImagePullBackOff             0                4d
 nginx-deployment-85996f8dbd-w7br8   1/1     Terminating                  1 (9h ago)       3d
-nginx-deployment-85996f8dbd-zshmq   1/1     Running                      1 (9h ago)       3d
+nginx-deployment-85996f8dbd-zshmq   1/1     Ru172.31.5.129nning                      1 (9h ago)       3d
 payment                             0/1     CrashLoopBackOff             10 (4m27s ago)   31m
 tomcat      
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get services
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl get services
 NAME                TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
 catalogue-service   LoadBalancer   10.105.103.2     <pending>     80:31956/TCP   15m
 kubernetes          ClusterIP      10.96.0.1        <none>        443/TCP        6d1h
 payment-service     ClusterIP      10.103.167.140   <none>        80/TCP         28m
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl get pods
 NAME                                READY   STATUS                       RESTARTS        AGE
 catalogue                           0/1     ImagePullBackOff             0               18m
 httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (10h ago)     3d
@@ -240,8 +240,8 @@ nginx-deployment-85996f8dbd-zshmq   1/1     Running                      1 (10h 
 payment                             0/1     CrashLoopBackOff             14 (2m9s ago)   49m
 tomcat                              0/1     CreateContainerConfigError   0               4d1h
 
-44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
-[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl exec -it httpd-deployment-d6598d6c5-hz8b6 bash
+catalogue| catalogue | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@catalogue ~/DockerK8sPOC ]$ kubectl exec -it httpd-deployment-d6598d6c5-hz8b6 bash
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
 root@httpd-deployment-d6598d6c5-hz8b6:/usr/local/apache2# cd ~
 root@httpd-deployment-d6598d6c5-hz8b6:~# ls
