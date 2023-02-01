@@ -16,7 +16,7 @@ kind: Service
 metadata:
   name: payment
   labels:
-    tiers: payment
+    tiers: payment-mysql
 spec:
   selector:      
     tier: payment-mysql  #matchs with pod label
