@@ -137,3 +137,45 @@ tomcat                              0/1     CreateContainerConfigError   0      
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-deployment   3/3     3            3           5m28s
 
+
+44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl scale deployment httpd-deployment --replicas=1
+deployment.apps/httpd-deployment scaled
+
+44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+NAME                                READY   STATUS                       RESTARTS      AGE
+httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (9h ago)    2d23h
+mongodb                             0/1     ImagePullBackOff             0             4d
+nginx-deployment-85996f8dbd-w7br8   1/1     Running                      1 (9h ago)    2d23h
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      1 (9h ago)    2d23h
+payment                             0/1     CrashLoopBackOff             9 (87s ago)   22m
+tomcat                              0/1     CreateContainerConfigError   0             4d1h
+
+44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl scale nginx-deployment --replicas=1
+error: the server doesn't have a resource type "nginx-deployment"
+
+44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl scale  deployment nginx-deployment --replicas=1
+deployment.apps/nginx-deployment scaled
+
+44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+NAME                                READY   STATUS                       RESTARTS        AGE
+httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (9h ago)      2d23h
+mongodb                             0/1     ImagePullBackOff             0               4d
+nginx-deployment-85996f8dbd-w7br8   1/1     Terminating                  1 (9h ago)      2d23h
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      1 (9h ago)      2d23h
+payment                             0/1     CrashLoopBackOff             9 (2m42s ago)   24m
+tomcat                              0/1     CreateContainerConfigError   0               4d1h
+
+44.199.195.0 | 172.31.5.129 | t3.medium | https://github.com/kalindalapreethiyadav/DockerK8sPOC.git
+[ centos@ip-172-31-5-129 ~/DockerK8sPOC ]$ kubectl get pods
+NAME                                READY   STATUS                       RESTARTS        AGE
+httpd-deployment-d6598d6c5-hz8b6    1/1     Running                      1 (9h ago)      2d23h
+mongodb                             0/1     ImagePullBackOff             0               4d
+nginx-deployment-85996f8dbd-w7br8   1/1     Terminating                  1 (9h ago)      2d23h
+nginx-deployment-85996f8dbd-zshmq   1/1     Running                      1 (9h ago)      2d23h
+payment                             0/1     CrashLoopBackOff             9 (2m55s ago)   24m
+tomcat                              0/1     CreateContainerConfigError  
